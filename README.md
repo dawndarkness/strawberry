@@ -1,1 +1,1 @@
-# strawberry
+# nfts-gallery
