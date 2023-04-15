@@ -3,8 +3,9 @@
 pragma solidity >=0.7.0 <0.9.0;
 
 import "./Ownable.sol";
+import "./StrawberryDonorFactory.sol";
 
-contract StrawberryCharity is Ownable {
+contract StrawberryCharity is Ownable, StrawberryDonorFactory {
     struct Donation {
         uint256 value;
         uint256 date;
@@ -43,6 +44,11 @@ contract StrawberryCharity is Ownable {
 
         _donations[msg.sender].push(donation);
         donationsCount++;
+
+        if (!donorExists[msg.sender]) {
+            _createDonor(msg.sender);
+        }
+
         emit DonationReceived(msg.sender, msg.value);
     }
 

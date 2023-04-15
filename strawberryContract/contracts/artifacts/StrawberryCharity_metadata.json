@@ -59,6 +59,38 @@
 				"anonymous": false,
 				"inputs": [
 					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "donorId",
+						"type": "uint256"
+					}
+				],
+				"name": "DonorCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "itemId",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "itemColorId",
+						"type": "uint256"
+					}
+				],
+				"name": "ItemAdded",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
 						"indexed": true,
 						"internalType": "address",
 						"name": "previousOwner",
@@ -80,12 +112,51 @@
 					{
 						"indexed": false,
 						"internalType": "uint256",
+						"name": "paletteId",
+						"type": "uint256"
+					}
+				],
+				"name": "PaletteCreated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
 						"name": "amount",
 						"type": "uint256"
 					}
 				],
 				"name": "Withdraw",
 				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_donorId",
+						"type": "uint256"
+					}
+				],
+				"name": "_addItem",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_donorAddress",
+						"type": "address"
+					}
+				],
+				"name": "_createDonor",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			},
 			{
 				"inputs": [
@@ -117,6 +188,19 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "string[5]",
+						"name": "_colors",
+						"type": "string[5]"
+					}
+				],
+				"name": "addPalette",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "beneficiary",
 				"outputs": [
@@ -143,6 +227,37 @@
 				"type": "function"
 			},
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_donorId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_paletteId",
+						"type": "uint256"
+					}
+				],
+				"name": "changeColorPalette",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "colorAmountPerPalette",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [],
 				"name": "description",
 				"outputs": [
@@ -165,6 +280,25 @@
 			{
 				"inputs": [],
 				"name": "donationsCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"name": "getOwnerByAddress",
 				"outputs": [
 					{
 						"internalType": "uint256",
@@ -222,6 +356,25 @@
 						"internalType": "address",
 						"name": "",
 						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "palettes",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -315,11 +468,35 @@
 			]
 		},
 		"contracts/StrawberryCharity.sol": {
-			"keccak256": "0xc51bee24a6bb6273588bdb37ce43a95ff726514eba312bcaf710005c1a0f3ecd",
+			"keccak256": "0xec0500aecff524c9f7b5c493fe54c61d8bae472c3b1ec97d3cbeb0304bf24eea",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://9f48941238b5c944c71c8b048b81d8b0734c6cc253beeff968e2829179afa112",
-				"dweb:/ipfs/QmVMrdH4PPkh31byHXJDeNZjPLgLfVM2fYroXMj98XqJn2"
+				"bzz-raw://290a612f5ca6b5fb0c5097a23b95b12d12afcba4e084e39a6f5121c61d927962",
+				"dweb:/ipfs/Qmet2uz1bkK3NV47THLyn5Vc4r1Sf5KMGQM86L5VCDe8LH"
+			]
+		},
+		"contracts/StrawberryColorPaletteFactory.sol": {
+			"keccak256": "0x4aad031b4332514689ec9e78c33c5e849e0a5c1bf7d0948a7bd498fb1254b393",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://82795c6dc135d3dc1f3212b05f94696873a28b4dc5ee562357eaa14c4cd451f9",
+				"dweb:/ipfs/QmSwAHAw5KoLE6rJaWrBb4t6MXGm4DMdL2GHB6BQ9XXd5j"
+			]
+		},
+		"contracts/StrawberryDonorFactory.sol": {
+			"keccak256": "0x49c4c66a579bc1cbd87d9ccb7d739d4dc24dfda83116ae9d1866a32ef356c32b",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://4be269613b62be9b3723f450a94d0930c69f093368a561a0ef8a45f55e9796e6",
+				"dweb:/ipfs/QmdZEDYuRMZxtK8KF4EEG1KyGXG6TQfEzihf7TCeyicLoS"
+			]
+		},
+		"contracts/StrawberryItemFactory.sol": {
+			"keccak256": "0x3c1a5d75ef186f56ef462bae07720eb4fabe6161315e36cc41bf85cc72161918",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://b36f7d722d806ea9215ef1ca3530dfd64fb3846e3ede5d5a465859b1d85f1852",
+				"dweb:/ipfs/QmQYJsifNZys6Fx4g42ChVjvf7DzjDc2WZqs8VdB6UpLfZ"
 			]
 		}
 	},
