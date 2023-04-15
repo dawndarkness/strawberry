@@ -1,0 +1,141 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "contract StrawberryCharity",
+						"name": "charity",
+						"type": "address"
+					},
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "owner",
+						"type": "address"
+					}
+				],
+				"name": "CharityCreated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "_charities",
+				"outputs": [
+					{
+						"internalType": "contract StrawberryCharity",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "charityCount",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "name",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "image",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "description",
+						"type": "string"
+					},
+					{
+						"internalType": "address payable",
+						"name": "beneficiary",
+						"type": "address"
+					}
+				],
+				"name": "createCharity",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/StrawberryCharityFactory.sol": "StrawberryCharityFactory"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/Ownable.sol": {
+			"keccak256": "0xd9ca73e5eb44e684bee463e4a1753373be09bc61284938a8737142ebf0367780",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://7b1c17fe7609bed4626d8fd1280a6f6e265ef3564b4f30b0bfd8e0896d930d70",
+				"dweb:/ipfs/QmRgUPHeZA6RfPZd1oy8aZSkRZ7gJdhHgeeM4zhy3yi2i3"
+			]
+		},
+		"contracts/StrawberryCharity.sol": {
+			"keccak256": "0xc51bee24a6bb6273588bdb37ce43a95ff726514eba312bcaf710005c1a0f3ecd",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://9f48941238b5c944c71c8b048b81d8b0734c6cc253beeff968e2829179afa112",
+				"dweb:/ipfs/QmVMrdH4PPkh31byHXJDeNZjPLgLfVM2fYroXMj98XqJn2"
+			]
+		},
+		"contracts/StrawberryCharityFactory.sol": {
+			"keccak256": "0x67672fadfbe7d224f51512081c56d1fe84aa7c9eb5deff9a3431f1740bc71b60",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://822597b06be8d84e4af8c33bfcfdf61e201a0c540e12bbe4b75d283c13da2f3e",
+				"dweb:/ipfs/Qme6NZSFzNZ33gBHn92XpBpbUHQwDrSzFTk4P3MSCuDLMU"
+			]
+		}
+	},
+	"version": 1
+}
