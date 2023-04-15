@@ -6,7 +6,7 @@ export default function Home() {
   return (
     <div>
       <main className={styles.main}>
-        <NFTGallery />
+        {/* <NFTGallery /> */}
         <Tree1 size={70}/>
       </main>
     </div>
