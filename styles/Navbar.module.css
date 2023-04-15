@@ -1,4 +1,7 @@
-
+@font-face {
+    font-family: 'noir-et-blanc';
+    src: url('../fonts/noir-et-blanc-cdnfonts/N_E_B_B.TTF') format('truetype');
+}
 
 .navbar {
 	display: flex;
@@ -110,4 +113,37 @@
 .logo_name {
 	margin-bottom: 0 !important;
 	margin-left: 5px;
+}
+
+.form_container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.input {
+	border: none;
+	background-color: #f1f1f1;
+	padding: 10px;
+	font-size: 20px;
+	font-family: "Times New Roman", Times, serif;
+	width: 50%;
+	height: 50%;
+}
+
+.donate_button {
+	background-color: #4CAF50;
+	border: none;
+	color: white;
+	padding: 5px 12px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+	font-family: 'Noir-et-Blanc', sans-serif;
+	border-radius: 10px;
+	transition-duration: 0.4s;
+	cursor: pointer;
+	margin: 10px;
 }
