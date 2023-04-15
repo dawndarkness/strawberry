@@ -30,7 +30,26 @@
 				"type": "event"
 			},
 			{
-				"inputs": [],
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "paletteId",
+						"type": "uint256"
+					}
+				],
+				"name": "PaletteCreated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string[5]",
+						"name": "_colors",
+						"type": "string[5]"
+					}
+				],
 				"name": "addPalette",
 				"outputs": [],
 				"stateMutability": "nonpayable",
@@ -51,12 +70,44 @@
 			},
 			{
 				"inputs": [],
+				"name": "colorAmountPerPalette",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
 				"name": "getOwner",
 				"outputs": [
 					{
 						"internalType": "address",
 						"name": "",
 						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "palettes",
+				"outputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
 					}
 				],
 				"stateMutability": "view",
@@ -112,11 +163,11 @@
 			]
 		},
 		"contracts/StrawberryColorPaletteFactory.sol": {
-			"keccak256": "0xf87416f6b34b94ed2593db6607ac3c202eb777276a8a68a8b7ce35186d35f20b",
+			"keccak256": "0x9b217f17f3518bcd9577dbe527a19b8ffb3c351f9eac7c6d7ec588c14fcbe2df",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://826dea5e4f5e1650b593377faf92429118031bdbf9f78c07786051a8314e5a6d",
-				"dweb:/ipfs/QmYXPpKrDwzYt2LW3RjGM3Ciqh391doWd1ukchqkVQuCXt"
+				"bzz-raw://fca376445a179d05b965541de420b9d12a672e050f44391a948514a6705d29b3",
+				"dweb:/ipfs/QmNmDEPDCq9tQyPMzJqSLHowcbwh3AeiDsw86V4R4VPC2R"
 			]
 		},
 		"hardhat/console.sol": {
