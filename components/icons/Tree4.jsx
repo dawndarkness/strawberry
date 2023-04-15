@@ -1,6 +1,6 @@
 import React from "react";
 
-const Tree4 = (size = 40, color = "#1ca538") => {
+const Tree4 = ({size = 40, color = "#1ca538"}) => {
   return (
     <svg
       height={`${size}px`}

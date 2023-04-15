@@ -1,12 +1,12 @@
 import React from "react";
 
-const Tree2 = (size = 40, color = "#1ca538") => {
+const Tree2 = ({size = 40, color = "#1ca538"}) => {
   return (
     <svg
       height={`${size}px`}
       width={`${size}px`}
       viewBox="0 0 1024 1024"
-      class="icon"
+      className="icon"
       version="1.1"
       xmlns="http://www.w3.org/2000/svg"
     >
