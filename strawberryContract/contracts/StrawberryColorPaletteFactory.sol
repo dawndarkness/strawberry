@@ -8,7 +8,7 @@ contract StrawberryColorPaletteFactory is Ownable {
     uint public colorAmountPerPalette = 5;
     uint private randNonce = 0;
 
-    uint[] public palettes;
+    uint[] palettes;
 
     mapping (uint => string[]) paletteToColors;
     
@@ -26,6 +26,14 @@ contract StrawberryColorPaletteFactory is Ownable {
         palettes.push(palettes.length);
         paletteToColors[palettes.length - 1] = _colors;
         emit PaletteCreated(palettes.length - 1);
+    }
+
+    function getPalette(uint paletteId) public view returns(string[] memory) {
+        return paletteToColors[paletteId];
+    }
+
+    function getPaletteAmount() public view returns(uint) {
+        return palettes.length;
     }
 
     //Internal
