@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/StrawberryDonorFactory.sol": "StrawberryColorPaletteFactor"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/StrawberryDonorFactory.sol": {
+			"keccak256": "0x21c07c47ac899614af88878d8dfdbeb61cc3723ea08e62b05030fe4196b4ff89",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://bd5e8a7c6c5ce0815d9787e6755c87f11f554183f6414c95b5f2040f80bcaf9d",
+				"dweb:/ipfs/QmXvgAxJ6YfhnNpxGLMV1CgkVMEVcpmD2eWCRE71FV9vgM"
+			]
+		}
+	},
+	"version": 1
+}

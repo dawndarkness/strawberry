@@ -1,0 +1,45 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/StrawberryDonorFactory.sol": "StrawberryDonor"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/StrawberryDonorFactory.sol": {
+			"keccak256": "0x8784977f86acea22ddad42670b4a986351c73b480ad86a6cf5039c368c7d054e",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://b3082f3e9d10ef134e0c22f3e1e7060724ad134741eb6d3cedb4a4f5a2fa2853",
+				"dweb:/ipfs/QmRysDtztj5YpLuHRfKRFa813RsEy5X3PhGMz2VCe49kiY"
+			]
+		}
+	},
+	"version": 1
+}

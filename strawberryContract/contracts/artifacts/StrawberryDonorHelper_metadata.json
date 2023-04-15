@@ -1,0 +1,137 @@
+{
+	"compiler": {
+		"version": "0.8.18+commit.87f61d96"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": false,
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "",
+						"type": "string"
+					}
+				],
+				"name": "DonorCreated",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "_donorId",
+						"type": "uint256"
+					},
+					{
+						"internalType": "uint256",
+						"name": "_paletteId",
+						"type": "uint256"
+					}
+				],
+				"name": "changeColorPalette",
+				"outputs": [],
+				"stateMutability": "payable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"name": "getItemsByOwner",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_owner",
+						"type": "address"
+					}
+				],
+				"name": "getOwnerByAddress",
+				"outputs": [
+					{
+						"internalType": "uint256[]",
+						"name": "",
+						"type": "uint256[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"contracts/StrawberryDonorHelper.sol": "StrawberryDonorHelper"
+		},
+		"evmVersion": "paris",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"contracts/StrawberryColorPaletteFactory.sol": {
+			"keccak256": "0x63099f0e9bf7fc5a8f796ac787aa80c4a94605ec6010399c2f4ba974394b2d50",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://262d22ec3444262ce195ba518bceea22742b273d93576506e3d8927b5f887748",
+				"dweb:/ipfs/QmZAw2AciCSqanSYWkYM5MUoA341Lv4jFmzCL49ByjhEVo"
+			]
+		},
+		"contracts/StrawberryDonorFactory.sol": {
+			"keccak256": "0x38fb693d31ac76fa817ce153638fca9b89c8b405cc80da43db71fbcab9857540",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://e01cc32bec5e2b3b794cec88a2631fb97853db265a580ea8765e98971ffa1582",
+				"dweb:/ipfs/QmcCjF4gGmPcXsqDRXHsdo9zK3s7gEN5yqNBJzKFHCQKQm"
+			]
+		},
+		"contracts/StrawberryDonorHelper.sol": {
+			"keccak256": "0x61c4454c00b0e1f9964b20e1a8d29a4ce397608c1678b74d3582a6b06406a4f3",
+			"license": "GPL-3.0",
+			"urls": [
+				"bzz-raw://16aeada8d5fe715d8b677f27a13d9d5508d4faebc5aef9527cf8247d9d37b294",
+				"dweb:/ipfs/QmQDxdVP3x6dtYGvbENBScFmHpj4FquKxGggEXa2VDkg7x"
+			]
+		}
+	},
+	"version": 1
+}
