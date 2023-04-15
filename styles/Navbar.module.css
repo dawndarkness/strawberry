@@ -100,3 +100,14 @@
 .modal_title {
 	text-align: center;
 }
+
+.logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo_name {
+	margin-bottom: 0 !important;
+	margin-left: 5px;
+}
