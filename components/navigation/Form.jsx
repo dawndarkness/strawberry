@@ -31,8 +31,8 @@ const Form = () => {
 
     return (
         <div className={styles.form_container}>
-            <form onSubmit={e => {handleSubmit(e)}} className={styles.input}>
-                <input type="number" name="amount" value={donationAmount} onChange={e => setDonationAmount(e.target.value)}/>
+            <form onSubmit={e => {handleSubmit(e)}}>
+                <input type="number" name="amount" value={donationAmount} onChange={e => setDonationAmount(e.target.value)} className={styles.input}/>
                 <button onClick={handleDonate} className={styles.donate_button}>Donate</button>
             </form>
         </div>
