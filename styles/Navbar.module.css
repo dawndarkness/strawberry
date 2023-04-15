@@ -69,7 +69,6 @@
     flex-direction: column;
     width: 1000px;
     height: fit-content;
-    padding: 24px 24px 0;
     border-radius: 11px;
     border: 2px solid #769766;
     z-index: 1;
@@ -85,7 +84,9 @@
 	display: flex;
 	flex-direction: column;
 	height: fit-content;
-	min-height: 400px;
+	justify-content: space-between;
+	align-items: center;
+	min-height: 450px;
 	width: 300px;
 	background: #E1F8D4;
 	border-radius: 20px;
@@ -128,7 +129,7 @@
 	padding: 10px;
 	font-size: 20px;
 	font-family: "Times New Roman", Times, serif;
-	width: 50%;
+	width: 100%;
 	height: 50%;
 }
 

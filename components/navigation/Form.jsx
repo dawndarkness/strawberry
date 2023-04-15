@@ -31,10 +31,11 @@ const Form = () => {
 
     return (
         <div className={styles.form_container}>
-            <form onSubmit={e => {handleSubmit(e)}}>
-                <input type="number" name="amount" value={donationAmount} onChange={e => setDonationAmount(e.target.value)} className={styles.input}/>
+            <div className={styles.form_container}>
+                <input placeholder="Enter amount in ETH" type="number" name="amount" value={donationAmount} onChange={e => setDonationAmount(e.target.value)} className={styles.input}/>
                 <button onClick={handleDonate} className={styles.donate_button}>Donate</button>
-            </form>
+            </div>
+            {`$${donationAmount * 2000}`}
         </div>
     )
 }
