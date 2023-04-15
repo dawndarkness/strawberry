@@ -7,7 +7,7 @@ const Form = () => {
     const [ donationAmount, setDonationAmount] = useState('');
 
     // get contract address
-    const CONTRACT_ADDRESS = "0xda4dAF4d6F1f29B4334345D37F2ca7A076b7352B";
+    const CONTRACT_ADDRESS = "0x102482DD4e494a8c1341725cc29ecC557D705E1b";
 
     const CONTRACT_ABI = StrawberryCharity.abi;
 
@@ -22,7 +22,7 @@ const Form = () => {
         const contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
     
         const donationAmountInWei = ethers.utils.parseEther(donationAmount);
-        const transaction = await contract.donate({ value: donationAmountInWei });
+        const transaction = await contract.donate({ value: donationAmountInWei, gasLimit: 50000 });
     
         await transaction.wait();
     
