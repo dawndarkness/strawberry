@@ -8,8 +8,9 @@ export default function Navbar() {
 
 	return (
 		<nav className={styles.navbar}>
-			<a href="/">
+			<a href="/" className={styles.logo}>
 				<StrawberryLogo />
+				<h1 className={styles.logo_name}>Strawberry App</h1>
 			</a>
 			<ModalMenuBtn />
 			<ConnectButton></ConnectButton>
