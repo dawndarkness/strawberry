@@ -85,6 +85,7 @@
 	flex-direction: column;
 	height: fit-content;
 	justify-content: space-between;
+	align-items: center;
 	min-height: 450px;
 	width: 300px;
 	background: #E1F8D4;
