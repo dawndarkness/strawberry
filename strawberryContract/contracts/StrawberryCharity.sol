@@ -5,7 +5,10 @@ pragma solidity >=0.7.0 <0.9.0;
 import "./Ownable.sol";
 import "./StrawberryDonorFactory.sol";
 
-contract StrawberryCharity is Ownable, StrawberryDonorFactory {
+contract StrawberryCharity is 
+    Ownable, 
+    StrawberryDonorFactory 
+{
     struct Donation {
         uint256 value;
         uint256 date;
@@ -14,6 +17,7 @@ contract StrawberryCharity is Ownable, StrawberryDonorFactory {
     string public name;
     string public image;
     string public description;
+
     address payable public beneficiary;
     uint256 public donationsCount = 0;
 
@@ -33,33 +37,58 @@ contract StrawberryCharity is Ownable, StrawberryDonorFactory {
         image = _image;
         description = _description;
         beneficiary = _beneficiary;
-        _transferOwnership(_custodian);
+        
+        _transferOwnership(
+            _custodian
+        );
     }
 
-    function donate() external payable {
-        Donation memory donation = Donation({
-            value: msg.value,
-            date: block.timestamp
-        });
+    receive() 
+        external
+        payable
+    {
+        donate();
+    }
 
-        _donations[msg.sender].push(donation);
+    function donate() 
+        public 
+        payable 
+    {
+        _donations[msg.sender].push(
+            Donation({
+                value: msg.value,
+                date: block.timestamp
+            })
+        );
+
         donationsCount++;
-
+        
         if (!donorExists[msg.sender]) {
             _createDonor(msg.sender);
         }
 
-        uint id = addressToDonor[msg.sender];
+        uint256 id = addressToDonor[msg.sender];
         _addItem(id);
 
-        emit DonationReceived(msg.sender, msg.value);
+        emit DonationReceived(
+            msg.sender, 
+            msg.value
+        );
     }
 
-    function changeBeneficiary(address payable _beneficiary) external onlyOwner {
+    function changeBeneficiary(
+        address payable _beneficiary
+    ) 
+        external 
+        onlyOwner 
+    {
         beneficiary = _beneficiary;
     }
 
-    function withdraw() external onlyOwner {
+    function withdraw() 
+        external 
+        onlyOwner 
+    {
         uint256 balance = address(this).balance;
         beneficiary.transfer(balance);
         emit Withdraw(balance);

@@ -5,20 +5,27 @@ pragma solidity >=0.7.0 <0.9.0;
 import "./StrawberryCharity.sol";
 
 contract StrawberryCharityFactory {
+
     StrawberryCharity[] public _charities;
-    event CharityCreated(StrawberryCharity indexed charity, address indexed owner);
+    
+    event CharityCreated(
+        StrawberryCharity indexed charity, 
+        address indexed owner
+    );
 
     function createCharity(
-        string memory name,
-        string memory image,
-        string memory description,
-        address payable beneficiary
-    ) public {
+        string memory _name,
+        string memory _image,
+        string memory _description,
+        address payable _beneficiary
+    ) 
+        public 
+    {
         StrawberryCharity charity = new StrawberryCharity({
-            _name: name,
-            _image: image,
-            _description: description,
-            _beneficiary: beneficiary,
+            _name: _name,
+            _image: _image,
+            _description: _description,
+            _beneficiary: _beneficiary,
             _custodian: msg.sender
         });
 

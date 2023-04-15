@@ -6,6 +6,17 @@
 	"output": {
 		"abi": [
 			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "correctIndex",
+						"type": "uint256"
+					}
+				],
+				"name": "InvalidData",
+				"type": "error"
+			},
+			{
 				"anonymous": false,
 				"inputs": [
 					{
@@ -13,12 +24,6 @@
 						"internalType": "uint256",
 						"name": "donorId",
 						"type": "uint256"
-					},
-					{
-						"indexed": false,
-						"internalType": "string",
-						"name": "donorName",
-						"type": "string"
 					}
 				],
 				"name": "DonorCreated",
@@ -49,7 +54,7 @@
 					{
 						"indexed": true,
 						"internalType": "address",
-						"name": "oldOwner",
+						"name": "previousOwner",
 						"type": "address"
 					},
 					{
@@ -59,7 +64,7 @@
 						"type": "address"
 					}
 				],
-				"name": "OwnerSet",
+				"name": "OwnershipTransferred",
 				"type": "event"
 			},
 			{
@@ -78,12 +83,12 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "_donorId",
-						"type": "uint256"
+						"internalType": "address",
+						"name": "_donorAddress",
+						"type": "address"
 					}
 				],
-				"name": "_addItem",
+				"name": "_createDonor",
 				"outputs": [],
 				"stateMutability": "nonpayable",
 				"type": "function"
@@ -120,19 +125,6 @@
 				"type": "function"
 			},
 			{
-				"inputs": [
-					{
-						"internalType": "address",
-						"name": "newOwner",
-						"type": "address"
-					}
-				],
-				"name": "changeOwner",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
 				"inputs": [],
 				"name": "colorAmountPerPalette",
 				"outputs": [
@@ -140,19 +132,6 @@
 						"internalType": "uint256",
 						"name": "",
 						"type": "uint256"
-					}
-				],
-				"stateMutability": "view",
-				"type": "function"
-			},
-			{
-				"inputs": [],
-				"name": "getOwner",
-				"outputs": [
-					{
-						"internalType": "address",
-						"name": "",
-						"type": "address"
 					}
 				],
 				"stateMutability": "view",
@@ -178,6 +157,32 @@
 				"type": "function"
 			},
 			{
+				"inputs": [],
+				"name": "isOwner",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "owner",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
 				"inputs": [
 					{
 						"internalType": "uint256",
@@ -195,21 +200,48 @@
 				],
 				"stateMutability": "view",
 				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "renounceOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "newOwner",
+						"type": "address"
+					}
+				],
+				"name": "transferOwnership",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
 			}
 		],
 		"devdoc": {
 			"kind": "dev",
 			"methods": {
-				"changeOwner(address)": {
-					"details": "Change owner",
-					"params": {
-						"newOwner": "address of new owner"
+				"isOwner()": {
+					"returns": {
+						"_0": "true if `msg.sender` is the owner of the contract."
 					}
 				},
-				"getOwner()": {
-					"details": "Return owner address ",
+				"owner()": {
 					"returns": {
-						"_0": "address of owner"
+						"_0": "the address of the owner."
+					}
+				},
+				"renounceOwnership()": {
+					"details": "Allows the current owner to relinquish control of the contract."
+				},
+				"transferOwnership(address)": {
+					"details": "Allows the current owner to transfer control of the contract to a newOwner.",
+					"params": {
+						"newOwner": "The address to transfer ownership to."
 					}
 				}
 			},
@@ -217,7 +249,11 @@
 		},
 		"userdoc": {
 			"kind": "user",
-			"methods": {},
+			"methods": {
+				"renounceOwnership()": {
+					"notice": "Renouncing to ownership will leave the contract without an owner. It will not be possible to call the functions with the `onlyOwner` modifier anymore."
+				}
+			},
 			"version": 1
 		}
 	},
@@ -237,44 +273,36 @@
 		"remappings": []
 	},
 	"sources": {
-		"contracts/Owner.sol": {
-			"keccak256": "0x78bbbec96c5bc30ed379cb4c7bc96af4af5c71a2ed6cbd7b202097223e055294",
+		"contracts/Ownable.sol": {
+			"keccak256": "0xd9ca73e5eb44e684bee463e4a1753373be09bc61284938a8737142ebf0367780",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://4e78c8bdef7b614a92576df195209a00fcc09bbaa00ec98c0ea29cb2118da1c5",
-				"dweb:/ipfs/QmWrv2qJbxtDegicpu5rLGk4LgXvYvo1qXMW7qQpD6vGSX"
+				"bzz-raw://7b1c17fe7609bed4626d8fd1280a6f6e265ef3564b4f30b0bfd8e0896d930d70",
+				"dweb:/ipfs/QmRgUPHeZA6RfPZd1oy8aZSkRZ7gJdhHgeeM4zhy3yi2i3"
 			]
 		},
 		"contracts/StrawberryColorPaletteFactory.sol": {
-			"keccak256": "0x9b217f17f3518bcd9577dbe527a19b8ffb3c351f9eac7c6d7ec588c14fcbe2df",
+			"keccak256": "0x544ed992cf8d628297e80c36cb24c6cb74b154f1fe843619b8cf2d1d3b8b5297",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://fca376445a179d05b965541de420b9d12a672e050f44391a948514a6705d29b3",
-				"dweb:/ipfs/QmNmDEPDCq9tQyPMzJqSLHowcbwh3AeiDsw86V4R4VPC2R"
+				"bzz-raw://84fd61f83e818fdb721ff6908477b1a0b187307f267de50b9134129fed5b536f",
+				"dweb:/ipfs/QmRmLAGrzE3aTfipUtibuwVUgECeUfgW49wzoqvWAUv2GR"
 			]
 		},
 		"contracts/StrawberryDonorFactory.sol": {
-			"keccak256": "0x8271f815bb8537e7fbfbf2a43c1d0e081034a75a1adbc0eb2dd2485ce297648e",
+			"keccak256": "0x686886f61d672aecb38aa25377043eb6d4248c9e6b52a60ea78d6d36117055eb",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://63bc6ab28645203e06c92826631928f8a3ed936bf18a915ab464531e99a16e74",
-				"dweb:/ipfs/QmbSdBmaAf6NZp36wHKHmtwWngfmfGhfQHWDiNWnDY9G4X"
+				"bzz-raw://1c1bf3d45c2d3b47c95a5ebc5d89cf1ab761c69ceb6cd2e89fddbcf1700249c2",
+				"dweb:/ipfs/Qmf4VATJSw8KHgidbzdk9zzHNLJ3CfiKgYHpbbUEL1ZaSb"
 			]
 		},
 		"contracts/StrawberryItemFactory.sol": {
-			"keccak256": "0x3c1a5d75ef186f56ef462bae07720eb4fabe6161315e36cc41bf85cc72161918",
+			"keccak256": "0x5f1628a490f82b03bdbd683755a82d5be7dc81d6692a915dfb281c18e51c0695",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://b36f7d722d806ea9215ef1ca3530dfd64fb3846e3ede5d5a465859b1d85f1852",
-				"dweb:/ipfs/QmQYJsifNZys6Fx4g42ChVjvf7DzjDc2WZqs8VdB6UpLfZ"
-			]
-		},
-		"hardhat/console.sol": {
-			"keccak256": "0x60b0215121bf25612a6739fb2f1ec35f31ee82e4a8216c032c8243d904ab3aa9",
-			"license": "MIT",
-			"urls": [
-				"bzz-raw://6e29880d33dd479bb046ba306993d26ccb779a4b1d94a046cb3567f22948bb4d",
-				"dweb:/ipfs/QmfTY1qzPt5C63Wc7y6JqfZr5899NRvXYdCpyLzR5FXQic"
+				"bzz-raw://18e22562410e76068d32c2bab7fa0bc005d77f8f22dd6a31e23073fb28ae111b",
+				"dweb:/ipfs/QmcWho6aN3KTZegwPGt5oFSFFxvXAcTvCxeAQneMooVWnE"
 			]
 		}
 	},

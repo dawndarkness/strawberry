@@ -33,11 +33,11 @@
 	},
 	"sources": {
 		"contracts/StrawberryItemFactory.sol": {
-			"keccak256": "0x3afd80227ed852b665b61136a0df9dd2960c7e6f20b84d4a6aebcb94faee8337",
+			"keccak256": "0x3c1a5d75ef186f56ef462bae07720eb4fabe6161315e36cc41bf85cc72161918",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://b1af680367a4863077c59af445aeac3ff7d99830d0d6d8e17d0918a13afec008",
-				"dweb:/ipfs/QmZRwtqdYXdZfh9UsBGmHxsXmLJUDpKMhucByvHEauYahd"
+				"bzz-raw://b36f7d722d806ea9215ef1ca3530dfd64fb3846e3ede5d5a465859b1d85f1852",
+				"dweb:/ipfs/QmQYJsifNZys6Fx4g42ChVjvf7DzjDc2WZqs8VdB6UpLfZ"
 			]
 		}
 	},
