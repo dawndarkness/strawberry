@@ -7,7 +7,6 @@ import "./StrawberryItemFactory.sol";
 
 contract StrawberryDonorFactory is StrawberryColorPaletteFactory, StrawberryItemFactory {
     struct StrawberryDonor {
-        string name;
         uint paletteId;
         uint[] items;
     }
@@ -15,8 +14,9 @@ contract StrawberryDonorFactory is StrawberryColorPaletteFactory, StrawberryItem
     uint changeColorPaletteFee = 0.001 ether;
     StrawberryDonor[] donors;
     mapping (address => uint) addressToDonor;
+    mapping (address => bool) donorExists;
 
-    event DonorCreated(uint donorId, string donorName);
+    event DonorCreated(uint donorId);
     event ItemAdded(uint itemId, uint itemColorId);
 
     function getOwnerByAddress(address _owner) external view returns(uint) {
@@ -29,23 +29,22 @@ contract StrawberryDonorFactory is StrawberryColorPaletteFactory, StrawberryItem
         donors[_donorId].paletteId = _paletteId;
     }
 
-    function _addItem(uint _donorId) external {
+    function _addItem(uint _donorId) internal {
         uint id = _createItem(_getRandomColorIndex(), 0);
         donors[_donorId].items.push(id);
     }
 
-    function _createDonor(string memory _name) internal {
+    function _createDonor(address _donorAddress) public {
         uint[] memory items = new uint[](1);
         
         donors.push(StrawberryDonor({
-            name: _name, 
             paletteId: _getRandomPalleteIndex(), 
             items: items
         }));
 
         uint id = donors.length - 1;
 
-        addressToDonor[msg.sender] = id;
-        emit DonorCreated(id, _name);
+        addressToDonor[_donorAddress] = id;
+        emit DonorCreated(id);
     }
 }

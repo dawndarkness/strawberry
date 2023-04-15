@@ -2,9 +2,9 @@
 
 pragma solidity >=0.7.0 <0.9.0;
 
-import "./Owner.sol";
+import "./Ownable.sol";
 
-contract StrawberryColorPaletteFactory is Owner {
+contract StrawberryColorPaletteFactory is Ownable {
     uint public colorAmountPerPalette = 5;
     uint private randNonce = 0;
 
@@ -22,7 +22,7 @@ contract StrawberryColorPaletteFactory is Owner {
     }
 
     //Public
-    function addPalette(string[5] memory _colors) public isOwner {
+    function addPalette(string[5] memory _colors) public onlyOwner {
         palettes.push(palettes.length);
         paletteToColors[palettes.length - 1] = _colors;
         emit PaletteCreated(palettes.length - 1);
