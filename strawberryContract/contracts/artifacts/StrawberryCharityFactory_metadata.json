@@ -145,11 +145,11 @@
 			]
 		},
 		"contracts/StrawberryDonorFactory.sol": {
-			"keccak256": "0x49c4c66a579bc1cbd87d9ccb7d739d4dc24dfda83116ae9d1866a32ef356c32b",
+			"keccak256": "0x828a2a4c351d1039449dedcdb611d00fb0bf4a21d5890ab3e77b7d559449d065",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://4be269613b62be9b3723f450a94d0930c69f093368a561a0ef8a45f55e9796e6",
-				"dweb:/ipfs/QmdZEDYuRMZxtK8KF4EEG1KyGXG6TQfEzihf7TCeyicLoS"
+				"bzz-raw://5d5956c98198fd69a3a8d8f510b2dcd046fa6ad384d0547978dd2cd9f80857fe",
+				"dweb:/ipfs/QmSnWCHWyydNNoF36YmWYgWisAc8jzzSAdfiqwka9pZTed"
 			]
 		},
 		"contracts/StrawberryItemFactory.sol": {

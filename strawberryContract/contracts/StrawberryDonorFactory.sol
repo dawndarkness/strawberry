@@ -29,7 +29,7 @@ contract StrawberryDonorFactory is StrawberryColorPaletteFactory, StrawberryItem
         donors[_donorId].paletteId = _paletteId;
     }
 
-    function _addItem(uint _donorId) external {
+    function _addItem(uint _donorId) internal {
         uint id = _createItem(_getRandomColorIndex(), 0);
         donors[_donorId].items.push(id);
     }

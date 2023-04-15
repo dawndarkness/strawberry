@@ -135,19 +135,6 @@
 			{
 				"inputs": [
 					{
-						"internalType": "uint256",
-						"name": "_donorId",
-						"type": "uint256"
-					}
-				],
-				"name": "_addItem",
-				"outputs": [],
-				"stateMutability": "nonpayable",
-				"type": "function"
-			},
-			{
-				"inputs": [
-					{
 						"internalType": "address",
 						"name": "_donorAddress",
 						"type": "address"
@@ -468,11 +455,11 @@
 			]
 		},
 		"contracts/StrawberryCharity.sol": {
-			"keccak256": "0xec0500aecff524c9f7b5c493fe54c61d8bae472c3b1ec97d3cbeb0304bf24eea",
+			"keccak256": "0x1f768f202298ff7e979644892bc960097135680baec3a41c7055d0a268914556",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://290a612f5ca6b5fb0c5097a23b95b12d12afcba4e084e39a6f5121c61d927962",
-				"dweb:/ipfs/Qmet2uz1bkK3NV47THLyn5Vc4r1Sf5KMGQM86L5VCDe8LH"
+				"bzz-raw://850997f984bd5a8113344e8cf480da039ea8b11ad5d36c6e5d264ab7000c4576",
+				"dweb:/ipfs/QmPvRfx1k68F9yUaPbvyDMSXSiC3PE2wkjwRWb8kCsZV5b"
 			]
 		},
 		"contracts/StrawberryColorPaletteFactory.sol": {
@@ -484,11 +471,11 @@
 			]
 		},
 		"contracts/StrawberryDonorFactory.sol": {
-			"keccak256": "0x49c4c66a579bc1cbd87d9ccb7d739d4dc24dfda83116ae9d1866a32ef356c32b",
+			"keccak256": "0x2b69a67c671a5feb808007809de6dea33b77d51b094460ce6120ede827940f99",
 			"license": "GPL-3.0",
 			"urls": [
-				"bzz-raw://4be269613b62be9b3723f450a94d0930c69f093368a561a0ef8a45f55e9796e6",
-				"dweb:/ipfs/QmdZEDYuRMZxtK8KF4EEG1KyGXG6TQfEzihf7TCeyicLoS"
+				"bzz-raw://ad5543d4bb75b7bc69cafcc56bf04407df3bad353dbcc96c4a876de9202eb427",
+				"dweb:/ipfs/QmTBchTqLG1UtNtUxGQ8LRobUuif9ZhdwgyKLX5h3qfYc3"
 			]
 		},
 		"contracts/StrawberryItemFactory.sol": {

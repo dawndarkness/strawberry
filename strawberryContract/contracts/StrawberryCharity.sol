@@ -49,6 +49,9 @@ contract StrawberryCharity is Ownable, StrawberryDonorFactory {
             _createDonor(msg.sender);
         }
 
+        uint id = addressToDonor[msg.sender];
+        _addItem(id);
+
         emit DonationReceived(msg.sender, msg.value);
     }
 
