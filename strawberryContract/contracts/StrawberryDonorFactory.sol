@@ -25,7 +25,7 @@ contract StrawberryDonorFactory is StrawberryColorPaletteFactory, StrawberryItem
 
     function changeColorPalette(uint _donorId, uint _paletteId) external payable {
         require(msg.value == changeColorPaletteFee);
-        require(_paletteId < paletteAmount);
+        require(_paletteId < palettes.length);
         donors[_donorId].paletteId = _paletteId;
     }
 
@@ -39,7 +39,7 @@ contract StrawberryDonorFactory is StrawberryColorPaletteFactory, StrawberryItem
         
         donors.push(StrawberryDonor({
             name: _name, 
-            paletteId: _getRandomPalletIndex(), 
+            paletteId: _getRandomPalleteIndex(), 
             items: items
         }));
 
