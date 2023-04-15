@@ -35,6 +35,7 @@ const Form = () => {
                 <input placeholder="Enter amount in ETH" type="number" name="amount" value={donationAmount} onChange={e => setDonationAmount(e.target.value)} className={styles.input}/>
                 <button onClick={handleDonate} className={styles.donate_button}>Donate</button>
             </div>
+            {`$${donationAmount * 2000}`}
         </div>
     )
 }
