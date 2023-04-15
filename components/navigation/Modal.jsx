@@ -22,7 +22,7 @@ const Modal = ({
             NPO_LIST.map((i) => {
                 return (
                     <div className={styles.modal_card} key={i.name}>
-                        {/* <img className={styles.Modalmodal_img} src={i.image} alt={i.name} width="50px"/> */}
+                        <img className={styles.Modalmodal_img} src={i.image} alt={i.name} width="50px"/>
                         <h1 className={styles.modal_title}>{i.name}</h1>
                         <p>{i.description}</p>
                         <Form />
