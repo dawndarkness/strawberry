@@ -7,7 +7,7 @@ const Form = () => {
     const [donationAmount, setDonationAmount] = useState('');
 
     // get contract address
-    const CONTRACT_ADDRESS = "0x102482DD4e494a8c1341725cc29ecC557D705E1b";
+    const CONTRACT_ADDRESS = "0x2fb0fc3a8c7b18a70a452288d78e73e9c54f3349";
 
     const CONTRACT_ABI = StrawberryCharity.abi;
 
