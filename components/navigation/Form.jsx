@@ -22,7 +22,7 @@ const Form = () => {
         const contract = new ethers.Contract(CONTRACT_ADDRESS, CONTRACT_ABI, signer);
 
         const donationAmountInWei = ethers.utils.parseEther(donationAmount);
-        const transaction = await contract.donate({ value: donationAmountInWei, gasLimit: 50000 });
+        const transaction = await contract.donate({ value: donationAmountInWei, gasLimit: 500000 });
 
         await transaction.wait();
 
